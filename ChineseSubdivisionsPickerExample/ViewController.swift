@@ -15,17 +15,17 @@ class ViewController: UIViewController, ChineseSubdivisionsPickerDelegate {
     @IBAction func selectPickerType(sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            subdivisionsPicker.pickerType = .Province
+            subdivisionsPicker.pickerType = .province
         case 1:
-            subdivisionsPicker.pickerType = .City
+            subdivisionsPicker.pickerType = .city
         case 2:
-            subdivisionsPicker.pickerType = .District
+            subdivisionsPicker.pickerType = .district
         default:
             break
         }
     }
     
-    func subdivisionsPickerDidUpdate(sender: ChineseSubdivisionsPicker) {
+    func subdivisionsPickerDidUpdate(_ sender: ChineseSubdivisionsPicker) {
         dataLabel.text = (subdivisionsPicker.province ?? "") + " " + (subdivisionsPicker.city ?? "") + " " + (subdivisionsPicker.district ?? "")
     }
     
